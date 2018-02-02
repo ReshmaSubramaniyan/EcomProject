@@ -3,6 +3,8 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="security" uri="http://www.springframework.org/security/tags" %>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -46,6 +48,16 @@ img.logo {
 		</div>
 		<div class="collapse navbar-collapse" id="myNavbar">
 			<ul class="nav navbar-nav">
+			
+				<c:url value="/about" var="about"></c:url>
+				
+							<security:authorize access="hasRole('ROLE_USER')">
+							<li><a href="displayartist" id="page">Supplier</a></li>
+							<li><a href="albums" id="page">Product</a></li>
+							</security:authorize>
+							<li>
+							<security:authorize access="hasRole('ROLE_ADMIN')">
+			
 				<li><a href="#">Home</a></li>
 				<li class="dropdown"><a class="dropdown-toggle"
 					data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
@@ -67,35 +79,58 @@ img.logo {
 						<li><a href="ViewCategory" id="page2">View</a></li>
 						<li><a href="Category" id="page2">Add</a></li>
 					</ul></li>
+					</security:authorize>
+								</li>
 					
-					
-				<li><a href="#">About Us</a></li>
-			</ul>
-			<form class="navbar-form navbar-left" action="/action_page.php">
-				<div class="form-group">
-					<input type="text" class="form-control" placeholder="Search"
-						name="search">
+				<ul class="nav navbar-nav navbar-right">
+						<c:if test="${pageContext.request.userPrincipal.name==null }">
+							<c:url value="/login" var="login"></c:url>
+							<li id="right"><a href="${login}"><span
+									class="glyphicon glyphicon-log-in"></span> Login</a></li>
+									</c:if>
+									<c:if test="${pageContext.request.userPrincipal.name!=null }">
+									<li id="right"><security:authorize access="hasRole('ROLE_USER')">
+					<li><a href="#">Hi ${pageContext.request.userPrincipal.name}!!</a></li>
+					<li><a href="myCart"><span
+									class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+									<li><a href="History"><span
+									class="glyphicon glyphicon-list"></span> Orders</a></li>
+					</security:authorize><security:authorize access="hasRole('ROLE_ADMIN')">
+					<li><a href="adminCart"><span
+									class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
+					</security:authorize></li>
+											
+							<c:url value="/logout" var="logout"></c:url>
+							<li id="right"><a href="${logout}"><span
+									class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+									</c:if>
+						</ul>
+						<c:if test="${pageContext.request.userPrincipal.name==null }">
+						<form class="navbar-form navbar-right" action="search" >
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search"
+									id="searchbox" name="searchTerm">
+							</div>
+							<button type="submit" class="btn" id="sbutton">Submit</button>
+						</form>
+						</c:if>
+						<security:authorize access="hasRole('ROLE_USER')">
+							<form class="navbar-form navbar-right" action="search" >
+							<div class="form-group">
+								<input type="text" class="form-control" placeholder="Search"
+									id="searchbox" name="searchTerm">
+							</div>
+							<button type="submit" class="btn" id="sbutton">Submit</button>
+						</form>
+							</security:authorize>
+					</div>
 				</div>
-				<button type="submit" class="btn btn-default">Submit</button>
-			</form>
-
-			<ul class="nav navbar-nav navbar-right">
-				<c:url value="/Signup" var="Signup"></c:url>
-				<c:url value="/login" var="login"></c:url>
-				<li><a href="${Signup}"><span
-						class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-				<li><a href="${login}"><span
-						class="glyphicon glyphicon-log-in"></span> Login</a></li>
-			</ul>
+			</nav>
 		</div>
-	</div>
-	</nav>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
+		</div>
+		<div class="margin"></div>
 </body>
 </html>
+				
+				
+				
