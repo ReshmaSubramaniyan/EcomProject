@@ -5,38 +5,68 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Product</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-.w3-button {width:150px;}
-.right {
-    position: absolute;
-    right: 650px;
-    width: 300px;
-    padding: 10px;
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<style type="text/css">
+html {
+	height: 100%;
+}
+body {
+	background: url(resources/images/bg/bg11.jpg) !important;
+	background-size: cover;
+}
+
+
+#marginbot
+{
+	margin-bottom: 100px;
+}
+h5{
+	color: white;
 }
 </style>
 </head>
 <body>
-
-<br><br> <img src="resources/image/products/${product.productId}.jpg" alt="${product.productId}" width="250" height="350" align="left">
- 
- 
- <div class="right">
- <ul style="list-style-type:none">
- <br><br><br><br><li class="span2"><h5 style="color: #99003d" >Product Name: ${product.productName}</h5>
-  <h6 style="color: #99003d">Price: ${product.price}</h6></li></ul>
+<%@ include file="Header.jsp"%>
+<br><br><br>
+<div class="col-sm-offset-3 col-sm-3">
+ </div>
+ <div class="col-sm-6">
+<h5 >Product Name: ${product.productName}</h5>
+<h5 >Product Description: ${product.productDescription}</h5>
+  <h5>Price: $ ${product.price}</h5>
  <span style="color: red;"> ${message}</span>
-  <div class="w3-container">
+
+  	<c:if test="${empty OutofStock}">
     <c:if test="${pageContext.request.userPrincipal.name == null }">
-  <p><a href="loginPage"><button class="w3-button w3-pink">Add To Cart</button></a></p>
+  <p><a href="login"><button class="btn btn-success">Add To Cart</button></a></p>
+  <p><a href="main"><button align="left" class="btn btn-blue">Go Back</button></a></p>
   </c:if>
     <c:if test="${pageContext.request.userPrincipal.name != null }">
-  <br><br><br><p><a href="addtocart?productId=${product.productId}"><button class="w3-button w3-pink">Add To Cart</button></a></p>
+  <p><a href="addtocart?productId=${product.productId}"><button class="btn btn-success">Add To Cart</button></a></p>
+  <p><a href="afterlogin"><button align="left" class="btn btn-blue">Go Back</button></a></p> 
   </c:if>
-  <p><a href="afterlogin"><button align="left" class="w3-button w3-purple">Go Back</button></a></p> 
+  </c:if>
+    	<c:if test="${not empty OutofStock}">
+    <c:if test="${pageContext.request.userPrincipal.name == null }">
+  <p><button class="btn btn-warning">Out of Stock</button></p>
+  <p><a href="main"><button align="left" class="btn btn-blue">Go Back</button></a></p>
+  </c:if>
+    <c:if test="${pageContext.request.userPrincipal.name != null }">
+  <p><button class="btn btn-warning">Out of Stock</button></p>
+  <p><a href="afterlogin"><button align="left" class="btn btn-blue">Go Back</button></a></p> 
+  </c:if>
+  </c:if>
+  
 </div>
-</div>
+<div id=marginbot></div>
+
 </body>
+
 </html>

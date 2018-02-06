@@ -90,22 +90,42 @@ public class ProductController {
 	public String productEdited(@ModelAttribute Product product){
 		
 		productDao.saveOrUpdate(product);
-		return "redirect:viewProduct";
+		return "redirect:ViewProduct";
 	}
 	
-	@RequestMapping("productdescription")
+
+	@RequestMapping("ProductDescription")
 	public String ProductDescription(@RequestParam ("productId") int productId, Model model){
 		Product product = productDao.getByProductId(productId);
 		model.addAttribute("product", product);
-		return "productdescription";
-	
+		if(product.getStock() == 0)
+		{
+			model.addAttribute("OutofStock", true);
+		}
+		return "ProductDescription";
 	}
-
-	/*@RequestMapping("displayproduct")
+	
+	@RequestMapping("DisplayProduct")
 	public String ProductDisplay(@RequestParam ("suppliername") String suppliername, Model model){
 		List<Product> product = productDao.getBySupplierName(suppliername);
 		model.addAttribute("product", product);
-		return "display";
+		return "DisplayProduct";
+	}
+	@RequestMapping("product")
+	public String albums( Model model){
+		List<Product> product = productDao.list();
+		model.addAttribute("product", product);
+		return "DisplayProduct";
+	}
+/*	
+	@RequestMapping("search")
+	public ModelAndView search(@RequestParam ("searchTerm") String search, Model model){
+		ModelAndView mv = new ModelAndView("search");
+		List<Product> album = productDao.getByProductName(search);
+		List<Product> product = productDao.getBySupplierName(search);
+		mv.addObject("album", album);
+		mv.addObject("product", product);
+		return mv;
 	}*/
 
 }

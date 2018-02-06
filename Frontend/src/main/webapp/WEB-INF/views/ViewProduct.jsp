@@ -2,15 +2,9 @@
     pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<br><br><br><br><br>
+<br><br>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<!-- <link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
- <script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Product</title>
@@ -85,10 +79,11 @@
   }
 }
 a{
-color:red;
+color:white;
 }
 body {
-  background-image: url("resources/images/background.jpg")!important;
+  background-image: url("resources/images/bg/bg11.jpg")!important;
+  background-size: cover;
 }
 h1 {
   font-weight: normal;
@@ -120,7 +115,8 @@ h1 span {
   <tr>
     <td>${status.count}</td>
 			<td>${product.productId}</td>
-			<td> <img src="resources/images/product/${product.productId}.jpg" alt="${product.productId}" width=100px; height=100px;></td>
+			<td> 
+			<img src="resources/images/product/${product.productId}.jpg" alt="product" width=120px; height=100px;></td>
 			<td>${product.productName}</td>
 			<td>${product.productDescription}</td>
 			<td>${product.stock}</td>

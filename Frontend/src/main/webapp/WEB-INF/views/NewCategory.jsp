@@ -11,19 +11,13 @@
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
 <script
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<style type="text/css">
+	<style type="text/css">
 body {
-		background-image: url("/resources/images/carousel/bag4.png");
- 
-	background-color: black;
+	background-image: url("resources/images/bg/bg2.jpg");
+	  background-size: cover;
 }
-
-label {
-	color: green;
-}
-
-.navbar-default {
-	background-color: #669999;
+label{
+	color: white;
 }
 </style>
 </head>
@@ -115,3 +109,4 @@ label {
 	<br>
 </body>
 </html>
+<%@ include file="footer.jsp"%>

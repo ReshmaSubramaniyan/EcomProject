@@ -9,15 +9,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.niit.DAO.BillingaddressDAO;
 import com.niit.DAO.ProductDAO;
 import com.niit.DAO.RoleDAO;
-import com.niit.DAO.ShippingaddressDAO;
 import com.niit.DAO.UserDAO;
 import com.niit.Model.Billingaddress;
 import com.niit.Model.Product;
 import com.niit.Model.Role;
 import com.niit.Model.Shippingaddress;
+
 import com.niit.Model.User;
 
 
@@ -27,11 +26,11 @@ public class UserController {
 	@Autowired
 	private UserDAO userDAO;
 
-	@Autowired
+	/*@Autowired
 	private ShippingaddressDAO shippingaddressDAO;
 	@Autowired
 	private BillingaddressDAO billingaddressDAO;
-	
+	*/
 	@Autowired
 	private ProductDAO productDAO;
 
@@ -66,11 +65,11 @@ public class UserController {
 		userDAO.saveOrUpdate(user);
 		roleDAO.saveOrUpdate(role);
 		
-		shippingaddress.setUserId(user.getUserId());
+/*		shippingaddress.setUserId(user.getUserId());
 		shippingaddressDAO.saveOrUpdate(shippingaddress);
 		
 		billingaddress.setUserId(user.getUserId());
-		billingaddressDAO.saveOrUpdate(billingaddress);
+		billingaddressDAO.saveOrUpdate(billingaddress);*/
 		
 		message = "You have Successfully Registered";
 		}
@@ -92,17 +91,17 @@ public class UserController {
 		
 		if(role1.equals("ROLE_ADMIN")){
 			
-			return "AdminLogin";
+			return "index";
 		}
 		else if(role1.equals("ROLE_USER")){
 			List<Product> productList = productDAO.list();
 			model.addAttribute("productList", productList);
 			model.addAttribute("userLoggedIn", "true");
-			return "UserLogin";
+			return "index";
 		}
 		else{		
 		
-		return "login";
+		return "index";
 		}
 	}
 	

@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>    
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -7,10 +7,11 @@
 <title>New Supplier</title>
 <style type="text/css">
 body {
-	background-image: url("resources/images/bg/background.jpg");
+	 background-image: url("resources/images/bg/bg14.jpg");
+     background-size: cover;
 }
 label{
-	color: green;
+	color: white;
 }
 </style>
 </head>
@@ -69,7 +70,7 @@ function isNumeric(elem, helperMsg) {
 </script>
 <br> <br> <br>
 <br> <br> <br>
-<form action="addSupplier" class="form-horizontal" method="post" onsubmit="return formSupplier()"> <!-- enctype="multipart/form-data"> -->
+<form action="addSupplier" class="form-horizontal" method="post" onsubmit="return formSupplier()"enctype="multipart/form-data">
   <div class="form-group">
     <label class="control-label col-sm-offset-2 col-sm-3" for="email">Supplier Name:</label>
     <div class="col-sm-3">

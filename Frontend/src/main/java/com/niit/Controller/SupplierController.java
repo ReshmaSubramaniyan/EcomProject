@@ -8,6 +8,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.DAO.SupplierDAO;
@@ -16,6 +17,8 @@ import com.niit.Model.Supplier;
 
 @Controller
 public class SupplierController {
+	
+	
 	@Autowired
 	private SupplierDAO supplierDao;
 	@RequestMapping("Supplier")
@@ -28,8 +31,10 @@ public class SupplierController {
 	
 	
 	@RequestMapping("addSupplier")
-	public String addSupplier(@ModelAttribute Supplier supplier){
+	public String addSupplier(@ModelAttribute Supplier supplier,Model model){
 		supplierDao.saveOrUpdate(supplier);
+		/*String path ="E://Reshma/Frontend/src/main/webapp/WEB-INF/resources/images/supplier/";
+		FileUtil.upload(path, file, supplier.getSupplierId()+".jpg");*/
 		return "redirect:ViewSupplier";
 		
 	}
@@ -67,4 +72,13 @@ public class SupplierController {
 		supplierDao.saveOrUpdate(supplier);
 		return "redirect:ViewSupplier";
 	}
+	@RequestMapping("DisplaySupplier")
+	public String displaysupplier(Model model){
+		
+		List<Supplier> supplierList = supplierDao.list();
+		model.addAttribute("supplierList", supplierList);
+		model.addAttribute("ViewSupplierButtonClicked", true);
+		
+		return "DisplaySupplier";
+}
 }

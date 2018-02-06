@@ -31,7 +31,7 @@
    
      </c:when>
      
-     <c:when test="${not empty EditProductClicked}">
+     <c:when test="${not empty editProductClicked}">
        <%@include file="/WEB-INF/views/EditProduct.jsp" %>
    
      </c:when>

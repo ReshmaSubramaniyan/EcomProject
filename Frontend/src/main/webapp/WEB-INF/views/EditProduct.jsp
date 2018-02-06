@@ -13,8 +13,8 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 body {
-	background-image: url("resources/images/bg/background.jpg");
-}
+  background-image: url("resources/images/bg/bg11.jpg")!important;
+  background-size: cover;}
 label{
 	color: white;
 }
@@ -79,7 +79,7 @@ function isAlphabet(elem, helperMsg) {
     </div>
   </div>
   <div class="form-group">
-    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">Album Description :</label>
+    <label class="control-label col-sm-offset-2 col-sm-3" for="pwd">ProductDescription :</label>
     <div class="col-sm-3"> 
       <input type="text" class= "form-control" name="productDescription" value="${product.productDescription}">
     </div>

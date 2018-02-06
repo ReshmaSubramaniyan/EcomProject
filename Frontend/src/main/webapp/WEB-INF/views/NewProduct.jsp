@@ -16,8 +16,9 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style type="text/css">
 body {
-	background-image: url("resources/images/bg/background.jpg");
-}
+  background-image: url("resources/images/bg/bg11.jpg")!important;
+  background-size: cover;
+  }
 label{
 	color: white;
 }

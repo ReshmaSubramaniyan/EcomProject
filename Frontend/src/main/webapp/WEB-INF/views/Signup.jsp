@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-    pageEncoding="ISO-8859-1"%>
+<%@include file="/WEB-INF/views/Header.jsp" %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
@@ -8,7 +8,6 @@
 <title>Signup</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- <link href="resources/style.css" rel="stylesheet">  -->
 <style type="text/css">
 .body{
 	background-image: url(https://pbs.twimg.com/media/DQctR1DUQAEc_v4.jpg);
@@ -109,7 +108,7 @@
 	/* margin-top: 10px; */
 }
 
-.login input[type=button]{
+.login button[type=button]{
 	width: 260px;
 	height: 35px;
 	background: #fff;
@@ -160,7 +159,9 @@
 }
 </style>
 </head>
-<body>			
+
+<body>	
+		
 <form action="addNewUser" method="post" onsubmit="return formRegister()" class="form-horizontal">
 	<div class="body"></div>
 	<div class="grad"></div>
@@ -175,16 +176,13 @@
 		<br><input type="number" placeholder="Contact number:" name="contactNumber"><br>
 		<br><input type="text" placeholder="Email:" name="emailId"><br>
 		<br><input type="password" placeholder="Password:" name="password"><br>
-		 <br><input type="text" placeholder="Address:" name="address"><br>
-		 <br><input type="number" placeholder="Zipcode:" name="zipcode"><br>
+	    <br><input type="text" placeholder="Address:" name="address"><br>
+		<br><input type="number" placeholder="Zipcode:" name="zipcode"><br>
 		<br>
-		<!-- <input type="button" value="Sign up"> -->
-		        <button type="submit" class="btn btn-default">SignUp</button>
+	    <button type="submit" class="btn btn-danger" id="subbutton">REGISTER</button>
 		
-	</div>
-	</form>
-	
-	
-</body>
-
+	    </div>
+	   </form>
+	  </body>
 </html>
+<%@ include file="footer.jsp"%>

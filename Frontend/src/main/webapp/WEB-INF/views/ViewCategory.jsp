@@ -107,8 +107,10 @@ h1 span {
 			<td>${category.categoryId}</td>
 			<td>${category.categoryName}</td>
 			<td>${category.categoryDescription}</td>
-			<td><a href="editCategory?categoryId=${category.categoryId}">Edit</a></td>
-			<td><a href="deleteCategory?categoryId=${category.categoryId}" onclick="return confirm('Are You Sure? Do you Want Delete Category : ${category.categoryName} ?')">Delete</a></td>
+			<td><a href="editCategory?categoryId=${category.categoryId}"><span
+									class="glyphicon glyphicon-pencil"></span></a></td>
+			<td><a href="deleteCategory?categoryId=${category.categoryId}"onclick="return confirm('Are You Sure? Do you Want Delete this Category : ${category.categoryName} ?')"><span
+									class="glyphicon glyphicon-trash"></span></a></td>
 		</tr>
 	</c:forEach>
 </table>

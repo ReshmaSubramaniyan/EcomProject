@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+    <br><br> <br><br> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -14,7 +15,7 @@
   border: 1px solid white;
 }
 .Supplier tr {
-  border: 1px solid black;
+  border: 1px solid white;
 }
 .Supplier tr:nth-child(odd) {
   background-color: transparent;
@@ -24,7 +25,7 @@
   border: 1px solid black;
   background-color: white;
   color: black;
-  padding: 1em;
+  padding: 3em;
 }
 .Supplier th:first-child {
   display: table-cell;
@@ -74,11 +75,13 @@
   }
 }
 a{
-color:red;
+color:white;
 }
 body {
   padding: 0 2em;
-  background-image: url("resources/images/background.jpg");
+  background-image: url("resources/images/bg/bg14.jpg");
+  background-size: cover;
+  
 }
 h1 {
   font-weight: normal;
@@ -109,7 +112,7 @@ h1 span {
 			<td>${supplier.contactNumber}</td>
 			<td><a href="editSupplier?supplierId=${supplier.supplierId}"><span
 									class="glyphicon glyphicon-pencil"></span></a></td>
-			<td><a href="deleteSupplier?supplierId=${supplier.supplierId}"onclick="return confirm('Are You Sure? Do you Want Delete this Artist : ${supplier.supplierName} ?')"><span
+			<td><a href="deleteSupplier?supplierId=${supplier.supplierId}"onclick="return confirm('Are You Sure? Do you Want Delete this Supplier : ${supplier.supplierName} ?')"><span
 									class="glyphicon glyphicon-trash"></span></a></td>
 		</tr>
 	</c:forEach>
