@@ -72,14 +72,14 @@ padding-top: 10px;
 </head>
       <body>
 		<div id="product" class="col-sm-12">
-			<p class="Latest">Featured Albums</p>
+			<p class="Latest">Featured Product</p>
 	</div>
   <c:forEach items="${product}" var="product" varStatus="status">
 <div class="col-sm-2">
 					<div id="f1_container1">
 						<div id="f1_card1" class="SR">
 							<div class="front face">
-								<img class="pro" src="resources/images/product/prod5.jpg" />
+								<img class="pro" src="resources/images/product/${product.productId}.jpg" />
 							</div>
 							<div class="back face center">
 								<p class="proname">${product.productName}</p>

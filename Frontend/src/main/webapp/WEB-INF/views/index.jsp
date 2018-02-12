@@ -12,9 +12,28 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
  <link rel="stylesheet" href="views/login.jsp" type="text/jsp">
-<link rel="stylesheet" href="views/Signup.jsp" type="text/jsp">
+ <link rel="stylesheet" href="views/Signup.jsp" type="text/jsp">
 </head>
- 
+<style>
+
+.container {
+  padding-left:0px;
+  padding-right:0px;
+  }
+  .carousel-inner{
+  width:100%;
+  max-height: 450px !important;
+}
+  .carousel-inner > .item > img,
+  .carousel-inner > .item > a > img {
+      width: 200%;
+	   width:200%;
+       max-height: 450px;
+      margin: auto;
+  }
+  
+
+</style> 
 
 <body>
 <%@include file="Header.jsp" %>
@@ -63,18 +82,7 @@
 					<%@ include file="DisplayFeatured.jsp"%>
 					</security:authorize>
 					</c:if>
-<div class="row">
-		<div id="footer" class="col-sm-12">
-			<p class="copyrights">Copyrights 2018-2019 - SR Collections.,</p>
-		</div>
-	</div>
-	<br>
-	<br>
-	<c:choose>
-		<c:when test="${not empty SignupButtonClicked}">
-
-			<%@include file="/WEB-INF/views/Signup.jsp"%>
-		</c:when>
-		</c:choose>
+	
 </body>
+<%@ include file="footer.jsp"%>
 </html>

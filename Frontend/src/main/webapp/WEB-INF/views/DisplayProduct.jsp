@@ -78,8 +78,7 @@ padding-top: 10px;
 margin-top: 250px;
 }
 body {
-	background: url(resources/images/bg/bg11.jpg) !important;
-	background-size: cover;
+	
 }
 </style>
 </head>
@@ -113,4 +112,3 @@ body {
 				</c:forEach>
 </body>
 
-<%@ include file="footer.jsp"%>

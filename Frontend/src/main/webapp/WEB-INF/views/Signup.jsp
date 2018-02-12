@@ -105,7 +105,6 @@
 	font-size: 16px;
 	font-weight: 400;
 	padding: 4px;
-	/* margin-top: 10px; */
 }
 
 .login button[type=button]{
@@ -120,7 +119,6 @@
 	font-size: 16px;
 	font-weight: 400;
 	padding: 6px;
-	/* margin-top: 10px; */
 }
 
 .login input[type=button]:hover{

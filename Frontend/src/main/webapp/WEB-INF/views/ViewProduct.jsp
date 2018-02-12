@@ -82,7 +82,7 @@ a{
 color:white;
 }
 body {
-  background-image: url("resources/images/bg/bg11.jpg")!important;
+  background-image: url("resources/images/bg/bg11.jpg")!important; 
   background-size: cover;
 }
 h1 {
@@ -113,7 +113,7 @@ h1 span {
   </tr>
   <c:forEach items="${productList}" var="product" varStatus="status">
   <tr>
-    <td>${status.count}</td>
+            <td>${status.count}</td>
 			<td>${product.productId}</td>
 			<td> 
 			<img src="resources/images/product/${product.productId}.jpg" alt="product" width=120px; height=100px;></td>

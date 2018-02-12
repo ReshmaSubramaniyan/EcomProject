@@ -10,7 +10,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<style type="text/css">
 body {
-	background-image: url("resources/images/bg/bg8.jpg");
+	background-image: url("resources/images/bg/background.jpg");
 }
 label{
 	color: white;
@@ -51,17 +51,17 @@ margin-bottom: 10px;
 		<div
 			class="col-md-3 boxed">
 			<a href="deleteAdd?shipmentId=${ship.shipmentId}"
-				class="btn btn-sm btn-danger" id="del"><span
+				class="btn btn-sm btn-Success" id="del"><span
 				class="glyphicon glyphicon-trash"></span></a><a
 				href="getUpdateAdd?shipmentId=${ship.shipmentId}"
-				class="btn btn-sm btn-warning" id="edit"><span
+				class="btn btn-sm btn-Success" id="edit"><span
 				class="glyphicon glyphicon-pencil"></span></a>
 			<div style="text-align: center;">
 				<strong style="padding-right: 5px; word-wrap: break-word;">Name:</strong>${ship.userName}</div>
 			<div style="text-align: center;">
 				<strong style="padding-right: 5px; word-wrap: break-word;">Address:</strong>${ship.address }</div>
 			<div style="text-align: center;">
-				<strong style="padding-right: 5px; word-wrap: break-word;">PhoneNo:</strong>${ship.contactNo}</div>
+				<strong style="padding-right: 5px; word-wrap: break-word;">PhoneNo:</strong>${ship.contactNumber}</div>
 			<div style="text-align: center; margin-bottom: 10px;">
 				<a href="pay?shipmentId=${ship.shipmentId}"
 					style="border-radius: 6px; margin-top: 10px;" class="btn btn-md btn-info"><span
@@ -70,4 +70,3 @@ margin-bottom: 10px;
 		</div>
 	</c:forEach>
 </div>
-<%@include file="/WEB-INF/views/footer.jsp" %>	

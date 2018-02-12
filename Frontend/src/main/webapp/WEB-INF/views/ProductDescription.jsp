@@ -18,8 +18,7 @@ html {
 	height: 100%;
 }
 body {
-	background: url(resources/images/bg/bg11.jpg) !important;
-	background-size: cover;
+	background-color: white;
 }
 
 
@@ -28,7 +27,7 @@ body {
 	margin-bottom: 100px;
 }
 h5{
-	color: white;
+	color: blue;
 }
 </style>
 </head>
@@ -36,6 +35,7 @@ h5{
 <%@ include file="Header.jsp"%>
 <br><br><br>
 <div class="col-sm-offset-3 col-sm-3">
+ <img id="pic"src="resources/images/product/${product.productId}.jpg" alt="${product.productId}">
  </div>
  <div class="col-sm-6">
 <h5 >Product Name: ${product.productName}</h5>
@@ -46,7 +46,7 @@ h5{
   	<c:if test="${empty OutofStock}">
     <c:if test="${pageContext.request.userPrincipal.name == null }">
   <p><a href="login"><button class="btn btn-success">Add To Cart</button></a></p>
-  <p><a href="main"><button align="left" class="btn btn-blue">Go Back</button></a></p>
+  <p><a href="index"><button align="left" class="btn btn-blue">Go Back</button></a></p>
   </c:if>
     <c:if test="${pageContext.request.userPrincipal.name != null }">
   <p><a href="addtocart?productId=${product.productId}"><button class="btn btn-success">Add To Cart</button></a></p>
@@ -56,8 +56,9 @@ h5{
     	<c:if test="${not empty OutofStock}">
     <c:if test="${pageContext.request.userPrincipal.name == null }">
   <p><button class="btn btn-warning">Out of Stock</button></p>
-  <p><a href="main"><button align="left" class="btn btn-blue">Go Back</button></a></p>
+  <p><a href="index"><button align="left" class="btn btn-blue">Go Back</button></a></p>
   </c:if>
+   
     <c:if test="${pageContext.request.userPrincipal.name != null }">
   <p><button class="btn btn-warning">Out of Stock</button></p>
   <p><a href="afterlogin"><button align="left" class="btn btn-blue">Go Back</button></a></p> 

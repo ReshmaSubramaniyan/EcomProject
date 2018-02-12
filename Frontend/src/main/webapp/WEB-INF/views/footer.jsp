@@ -11,16 +11,17 @@
 }
 .copyrights{
     color: black;
-    float: right;
-    padding : 15px;
+    float: bottom;
+    padding : 10px;
 }
 	</style>
 </head>
 <body>
-	<div class="row">
-		<div id="footer" class="col-sm-12">
-			<p class="copyrights">Copyrights 2018-2019 - SR Collections.,</p>
-		</div>
-	</div>
+	<footer class="footer">
+     <div class="container text-right">
+   <small style="color:grey" class="copyright">  Copyrights 2018-2019 - SR Collections.,</small>
+   
+  </div>
+</footer>
 </body>
 </html>

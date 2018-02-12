@@ -11,12 +11,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.niit.DAO.ProductDAO;
 import com.niit.DAO.RoleDAO;
+import com.niit.DAO.ShipmentDAO;
 import com.niit.DAO.UserDAO;
-import com.niit.Model.Billingaddress;
 import com.niit.Model.Product;
 import com.niit.Model.Role;
-import com.niit.Model.Shippingaddress;
-
+import com.niit.Model.Shipment;
 import com.niit.Model.User;
 
 
@@ -25,12 +24,9 @@ public class UserController {
 
 	@Autowired
 	private UserDAO userDAO;
-
-	/*@Autowired
-	private ShippingaddressDAO shippingaddressDAO;
 	@Autowired
-	private BillingaddressDAO billingaddressDAO;
-	*/
+	
+	ShipmentDAO ShipmentDao;
 	@Autowired
 	private ProductDAO productDAO;
 
@@ -42,7 +38,7 @@ public class UserController {
 	private Role role;
 
 	@RequestMapping("addNewUser")
-	public String addUser(@ModelAttribute User user, @ModelAttribute Shippingaddress shippingaddress, @ModelAttribute Billingaddress billingaddress, Model model) {
+	public String addUser(@ModelAttribute User user, @ModelAttribute Shipment shipment,  Model model) {
 		
 		String message;
 		
@@ -65,11 +61,9 @@ public class UserController {
 		userDAO.saveOrUpdate(user);
 		roleDAO.saveOrUpdate(role);
 		
-/*		shippingaddress.setUserId(user.getUserId());
-		shippingaddressDAO.saveOrUpdate(shippingaddress);
+		shipment.setUserId(user.getUserId());
+		ShipmentDao.saveOrUpdate(shipment);
 		
-		billingaddress.setUserId(user.getUserId());
-		billingaddressDAO.saveOrUpdate(billingaddress);*/
 		
 		message = "You have Successfully Registered";
 		}

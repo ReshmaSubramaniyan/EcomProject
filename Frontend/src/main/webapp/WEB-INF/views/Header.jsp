@@ -128,32 +128,9 @@ margin-right:10px;
         </ul>
       </li>
       </security:authorize>
-      <li><a href="#">About Us</a></li>
+      <li><a href="about">About Us</a></li>
     </ul>
-    <c:if test="${pageContext.request.userPrincipal.name==null }">
-   <form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search here" name="search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search" style="color: gray;font-size: 1.45em;padding-left:8px;"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    </c:if>
-    <security:authorize access="hasRole('ROLE_USER')">
-     <form class="navbar-form navbar-left" action="/action_page.php">
-      <div class="input-group">
-        <input type="text" class="form-control" placeholder="Search here" name="search">
-        <div class="input-group-btn">
-          <button class="btn btn-default" type="submit">
-            <i class="glyphicon glyphicon-search" style="color: black;font-size: 1.45em;padding-left:15px;padding-bootom:-4px;"></i>
-          </button>
-        </div>
-      </div>
-    </form>
-    </security:authorize>
+  
     <ul class="nav navbar-nav navbar-right">
     <c:if test="${pageContext.request.userPrincipal.name==null }">
     <c:url value="/login" var="login"> </c:url>
@@ -161,9 +138,20 @@ margin-right:10px;
      <c:url value="/Signup" var="Signup"> </c:url>
       <li><a href="${Signup}"><span class="glyphicon glyphicon-user"></span> Signup</a></li>
       </c:if>
+ 					<li id="right"><security:authorize
+							access="hasRole('ROLE_USER')">
+							<li><a href="#">Hi
+									${pageContext.request.userPrincipal.name}!!</a></li>
+							<li><a href="myCart"><span
+									class="glyphicon glyphicon-shopping-cart"></span> Cart</a></li>
+						</security:authorize>
+						<security:authorize access="hasRole('ROLE_ADMIN')">
+							<li><a href="admincart"><span
+									class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
+						</security:authorize></li>
       <c:if test="${pageContext.request.userPrincipal.name!=null }">
 									<li id="right"><security:authorize access="hasRole('ROLE_USER')">
-					<li><a href="#">Hi ${pageContext.request.userPrincipal.name}!!</a></li>
+
 					</security:authorize></li>
 					<c:url value="/logout" var="logout"></c:url>
 							<li id="right"><a href="${logout}"><span
@@ -174,6 +162,6 @@ margin-right:10px;
   </div>
   </div>
 </nav>
-<br><br><br><br><br>
+<br><br>
 </body>
 </html>

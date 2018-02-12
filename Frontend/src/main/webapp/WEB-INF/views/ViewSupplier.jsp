@@ -104,7 +104,7 @@ h1 span {
 		<th align="left">Edit</th>
 		<th align="left">Delete</th>
 		</tr>
-		 <c:forEach items="${supplierList}" var="supplier" varStatus="status">
+		<c:forEach items="${supplierList}" var="supplier" varStatus="status">
 		<tr>
 			<td>${status.count}</td>
 			<td>${supplier.supplierId}</td>

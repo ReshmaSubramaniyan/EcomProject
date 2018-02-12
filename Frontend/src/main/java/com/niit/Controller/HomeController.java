@@ -25,6 +25,13 @@ public class HomeController {
 		return "index";
 	}
 	
+	@RequestMapping("/index")
+	public String HomePage(Model model) {
+		List<Product> product = productDao.getByFeatured();
+		model.addAttribute("product", product);
+		return "index";
+	}
+	
 	@RequestMapping("/login")
 	public ModelAndView loginPage(@RequestParam(value = "error", required = false) String error,
 			@RequestParam(value = "logout", required = false) String logout,Model model) {
@@ -48,7 +55,11 @@ public class HomeController {
 		return "Signup";
 	}
 
+	@RequestMapping("/about")
+	public String aboutPage(Model model) {
 
-	
-	
+		return "about";
+	}
 }
+	
+	

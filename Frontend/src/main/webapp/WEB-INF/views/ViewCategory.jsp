@@ -1,5 +1,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<br><br><br>List of Category<br><br>
+
+<%@include file="/WEB-INF/views/navbar.jsp" %>
+<%@include file="/WEB-INF/views/Header.jsp" %>
 
 <head>
 <style>
@@ -7,22 +9,22 @@
   margin: 1em 8em;
   width: 80%;
   overflow: hidden;
-  background: #FFF;
-  color: #024457;
+  background: transparent;
+  color: blue;
   border-radius: 10px;
-  border: 1px solid #167F92;
+  border: 1px solid white;
 }
 .responstable tr {
-  border: 1px solid #167F92;
+  border: 1px solid white;
 }
 .responstable tr:nth-child(odd) {
-  background-color: #EAF3F3;
+  background-color: transparent;
 }
 .responstable th {
   display: none;
-  border: 1px solid #167F92;
-  background-color: #167F92;
-  color: #FFF;
+  border: 1px solid white;
+  background-color: white;
+  color: black;
   padding: 1em;
 }
 .responstable th:first-child {
@@ -55,15 +57,15 @@
 .responstable td:first-child {
   display: table-cell;
   text-align: center;
-  border-right: 1px solid #D9E4E6;
+  border-right: 1px solid white;
 }
 @media (min-width: 480px) {
   .responstable td {
-    border: 1px solid #167f92;
+    border: 1px solid white;
   }
 }
 .responstable th, .responstable td {
-  text-align: left;
+  text-align: center;
   margin: .5em 1em;
 }
 @media (min-width: 480px) {
@@ -72,23 +74,42 @@
     padding: 1em;
   }
 }
+a{
+color:blue;
+}
 body {
   padding: 0 2em;
-  font-family: Arial, sans-serif;
-  color: #024457;
-  background: #f2f2f2;
+  background-image: url("resources/images/bg/background.jpg");
 }
 h1 {
-  font-family: Verdana;
   font-weight: normal;
   color: #024457;
 }
 h1 span {
   color: #167F92;
 }
+#albums{
+background: threedlightshadow;
+color: black;
+font-size: x-large;
+font-family: fantasy;
+margin-top:10px;
+margin-bottom: 5px;
+}
+.Latest{
+padding-top: 10px;
+margin-left: 20px;
+}
 </style>
 </head>
 <body>
+<div class="container">
+	<div class="row">
+		<div id="product" class="col-sm-12">
+			<p class="Latest">Category</p>
+	</div>
+	</div>
+	</div>
 <table class="responstable">
   
   <tr>

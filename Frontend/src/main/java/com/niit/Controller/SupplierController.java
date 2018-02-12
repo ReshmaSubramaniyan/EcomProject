@@ -8,7 +8,6 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.niit.DAO.SupplierDAO;
@@ -33,8 +32,6 @@ public class SupplierController {
 	@RequestMapping("addSupplier")
 	public String addSupplier(@ModelAttribute Supplier supplier,Model model){
 		supplierDao.saveOrUpdate(supplier);
-		/*String path ="E://Reshma/Frontend/src/main/webapp/WEB-INF/resources/images/supplier/";
-		FileUtil.upload(path, file, supplier.getSupplierId()+".jpg");*/
 		return "redirect:ViewSupplier";
 		
 	}
