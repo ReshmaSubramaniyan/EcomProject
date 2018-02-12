@@ -4,21 +4,20 @@ package com.niit.backend;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import com.niit.DAO.UserDAO;
-
 import com.niit.DAO.BillingaddressDAO;
 import com.niit.DAO.CartDAO;
 import com.niit.DAO.CategoryDAO;
 import com.niit.DAO.ProductDAO;
 import com.niit.DAO.RoleDAO;
-import com.niit.DAO.ShippingaddressDAO;
-import com.niit.DAO.SupplierDAO;
+/*import com.niit.DAO.ShippingaddressDAO;
+*/import com.niit.DAO.SupplierDAO;
 import com.niit.Model.Billingaddress;
 import com.niit.Model.Cart;
 import com.niit.Model.Category;
 import com.niit.Model.Product;
 import com.niit.Model.Role;
-import com.niit.Model.Shippingaddress;
-import com.niit.Model.Supplier;
+/*import com.niit.Model.Shippingaddress;
+*/import com.niit.Model.Supplier;
 import com.niit.Model.User;
 
 public class Test {
@@ -38,8 +37,8 @@ public class Test {
 		CartDAO cartDAO = (CartDAO) context.getBean("CartDAO");
 		SupplierDAO supplierDAO = (SupplierDAO) context.getBean("SupplierDAO");
 		
-		ShippingaddressDAO shippingaddressDAO = (ShippingaddressDAO) context.getBean("ShippingaddressDAO");
-		RoleDAO roleDAO = (RoleDAO) context.getBean("RoleDAO");
+/*		ShippingaddressDAO shippingaddressDAO = (ShippingaddressDAO) context.getBean("ShippingaddressDAO");
+*/		RoleDAO roleDAO = (RoleDAO) context.getBean("RoleDAO");
 		
 		Category category = (Category) context.getBean("category");
 		
@@ -47,8 +46,8 @@ public class Test {
 		Billingaddress billingaddress = (Billingaddress) context.getBean("billingaddress");
 		Cart cart = (Cart) context.getBean("cart");
 		Supplier supplier = (Supplier) context.getBean("supplier");
-		Shippingaddress shippingaddress = (Shippingaddress) context.getBean("shippingaddress");
-		Role role = (Role) context.getBean("role");
+/*		Shippingaddress shippingaddress = (Shippingaddress) context.getBean("shippingaddress");
+*/		Role role = (Role) context.getBean("role");
 		User user = (User) context.getBean("user");
 		
 		user.setUserName("skfr");
@@ -98,9 +97,9 @@ public class Test {
 		
 		
 		
-		shippingaddress.setAddress("fdgfs");
+		/*shippingaddress.setAddress("fdgfs");
 		shippingaddress.setUserName("jkfgjd");
-		shippingaddressDAO.saveOrUpdate(shippingaddress);
+		shippingaddressDAO.saveOrUpdate(shippingaddress);*/
 		
 		
 	}

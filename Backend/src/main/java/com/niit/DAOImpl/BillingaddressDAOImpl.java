@@ -2,12 +2,13 @@ package com.niit.DAOImpl;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.hibernate.Criteria;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import org.springframework.transaction.annotation.Transactional;
 
 import com.niit.DAO.BillingaddressDAO;
 import com.niit.Model.Billingaddress;
@@ -88,6 +89,11 @@ public void editBillingAddress(Billingaddress billingaddress) {
 public void saveOrUpdate(Billingaddress billingaddress) {
 	// TODO Auto-generated method stub
 	sessionFactory.getCurrentSession().saveOrUpdate(billingaddress);
+}
+
+public Billingaddress getByContactNumber(String contactnumber) {
+	// TODO Auto-generated method stub
+	return null;
 }
 
 }

@@ -14,8 +14,6 @@ public interface UserDAO {
 		
 		public User getByUserName(String userame);		
 		
-			
-		
 		public User getByEmailId(String emailid);
 		
 	    public User getByPassword(String password);

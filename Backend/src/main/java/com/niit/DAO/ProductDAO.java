@@ -5,8 +5,8 @@ import java.util.List;
 import com.niit.Model.Product;
 
 public interface ProductDAO {
-	
-public List<Product> list();
+
+	public List<Product> list();
 	
 	public Product getByProductId(int productid);
 	
@@ -16,4 +16,7 @@ public List<Product> list();
 	
 	public void delete(int product_id);
 
+	public List<Product> getBySupplierName(String suppliername);
+
+	public List<Product> getByFeatured();
 }
