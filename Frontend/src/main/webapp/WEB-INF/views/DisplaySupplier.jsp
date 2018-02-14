@@ -86,7 +86,7 @@ body {
 </head>
 <body>
 <%@ include file="Header.jsp"%>
-		<div id="product" class="col-sm-12">
+		<div id="album" class="col-sm-12">
 			<p class="Latest">Supplier</p>
 	</div>
   <c:forEach items="${supplierList}" var="supplier" varStatus="status">
@@ -105,4 +105,3 @@ body {
 				</div>
   </c:forEach>
 </body>
-<%@ include file="footer.jsp"%>

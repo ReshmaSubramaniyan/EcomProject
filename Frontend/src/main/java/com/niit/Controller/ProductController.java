@@ -1,5 +1,6 @@
 package com.niit.Controller;
 
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,12 +19,11 @@ import com.niit.Model.Category;
 import com.niit.Model.Product;
 import com.niit.Model.Supplier;
 
-
 @Controller
 public class ProductController {
 
 	@Autowired
-	private ProductDAO productDao;
+	private ProductDAO  productDao;
 	@Autowired
 	private CategoryDAO categoryDao;
 	
@@ -43,7 +43,6 @@ public class ProductController {
 		mv.addObject("AddProductButtonClicked", true);
 		return mv;
 	}
-	
 	@RequestMapping("addProduct")
 	public String addProduct(@ModelAttribute Product product, @RequestParam("file") MultipartFile file ,Model model){
 		productDao.saveOrUpdate(product);
@@ -93,39 +92,26 @@ public class ProductController {
 		return "redirect:ViewProduct";
 	}
 	
-
 	@RequestMapping("ProductDescription")
 	public String ProductDescription(@RequestParam ("productId") int productId, Model model){
 		Product product = productDao.getByProductId(productId);
 		model.addAttribute("product", product);
-		if(product.getStock() == 0)
-		{
-			model.addAttribute("OutofStock", true);
-		}
 		return "ProductDescription";
-	}
 	
+	}
+
 	@RequestMapping("DisplayProduct")
 	public String ProductDisplay(@RequestParam ("suppliername") String suppliername, Model model){
 		List<Product> product = productDao.getBySupplierName(suppliername);
 		model.addAttribute("product", product);
 		return "DisplayProduct";
 	}
+	
 	@RequestMapping("product")
 	public String albums( Model model){
 		List<Product> product = productDao.list();
 		model.addAttribute("product", product);
 		return "DisplayProduct";
 	}
-/*	
-	@RequestMapping("search")
-	public ModelAndView search(@RequestParam ("searchTerm") String search, Model model){
-		ModelAndView mv = new ModelAndView("search");
-		List<Product> album = productDao.getByProductName(search);
-		List<Product> product = productDao.getBySupplierName(search);
-		mv.addObject("album", album);
-		mv.addObject("product", product);
-		return mv;
-	}*/
 
 }

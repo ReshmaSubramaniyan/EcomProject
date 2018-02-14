@@ -10,7 +10,7 @@
 <title>Product</title>
 <style>
 .product {
-  margin: 1em 8em;
+  margin: 2em 6em;
   width: 80%;
   overflow: hidden;
   background: transparent;
@@ -79,7 +79,7 @@
   }
 }
 a{
-color:white;
+color:blue;
 }
 body {
   background-image: url("resources/images/bg/bg11.jpg")!important; 

@@ -94,17 +94,22 @@ margin-right:10px;
   
   <div class="collapse navbar-collapse" id="myNavbar">
     <ul class="nav navbar-nav">
-    <c:url value="/index" var="index"></c:url>
-      <li><a href="${index}">Home</a></li>
-      
-      <c:if test="${pageContext.request.userPrincipal.name==null }">
+    <c:if test="${pageContext.request.userPrincipal.name != null }">
+                               
+                                <li><a href="index">Home</a></li>
+                                </c:if>
+    <c:if test="${pageContext.request.userPrincipal.name == null }">
+      <li><a href="index">Home</a></li>
+       </c:if>
+     <%--  <c:if test="${pageContext.request.userPrincipal.name==null }">
 							<li><a href="DisplaySupplier" id="page">Supplier</a></li>
-							<li><a href="product" id="page">Product</a></li>
+							<li><a href="product" id="page">Products</a></li>
 							</c:if>
 							<security:authorize access="hasRole('ROLE_USER')">
 							<li><a href="DisplaySupplier" id="page">Supplier</a></li>
-							<li><a href="product" id="page">Product</a></li>
-							</security:authorize>
+							<li><a href="product" id="page">Products</a></li>
+							</security:authorize> --%>
+							
       <security:authorize access="hasRole('ROLE_ADMIN')">
       <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Categories<span class="caret"></span></a>
         <ul class="dropdown-menu">
@@ -149,7 +154,7 @@ margin-right:10px;
 							<li><a href="admincart"><span
 									class="glyphicon glyphicon-list-alt"></span> Orders</a></li>
 						</security:authorize></li>
-      <c:if test="${pageContext.request.userPrincipal.name!=null }">
+                 <c:if test="${pageContext.request.userPrincipal.name!=null }">
 									<li id="right"><security:authorize access="hasRole('ROLE_USER')">
 
 					</security:authorize></li>
